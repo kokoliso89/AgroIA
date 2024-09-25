@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendario Lunar - AgroIA</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/estilo.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">AgroIA</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="Inicio.html"><i class="fas fa-home"></i> Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="ChatbotIA2.html"><i class="fas fa-robot"></i> ChatbotIA</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Documentacion2.html"><i class="fas fa-book"></i> Documentación</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="ZonaSocial2.html"><i class="fas fa-users"></i> Zona Social</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="ZonaMercado2.html"><i class="fas fa-store"></i> Zona de Mercado</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Calendario2.html"><i class="fas fa-calendar-alt"></i> Calendario Lunar</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <h1 class="text-center">Calendario Lunar</h1>
+        <p class="text-center">Consulta la fase lunar actual para tus actividades agrícolas.</p>
+        
+        <div class="row justify-content-center">
+            <div class="col-md-6 text-center">
+                <h2 id="lunarPhase">Cargando fase lunar...</h2>
+                <p id="lunarDate"></p>
+                <img id="lunarImage" src="" alt="Fase lunar" style="max-width: 200px;"/>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <p>&copy; 2024 AgroIA. Todos los derechos reservados.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <div class="footer-links">
+                        <a href="#">Política de Privacidad</a>
+                        <a href="#">Términos y Condiciones</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function getLunarPhase(date) {
+            const lp = 2551443; // Lunar cycle in seconds (29.53 days)
+            const newMoon = new Date(1970, 0, 7, 20, 35, 0); // Reference date for a new moon
+            const phaseTime = ((date - newMoon) / 1000) % lp;
+            const phaseDays = Math.floor(phaseTime / (24 * 3600));
+            return phaseDays;
+        }
+
+        function showLunarPhase() {
+            const today = new Date();
+            const phaseDays = getLunarPhase(today);
+            const lunarPhaseElement = document.getElementById('lunarPhase');
+            const lunarImageElement = document.getElementById('lunarImage');
+            const lunarDateElement = document.getElementById('lunarDate');
+            
+            lunarDateElement.textContent = `Fecha: ${today.toDateString()}`;
+
+            let phase = '';
+            let imagePath = '';
+            
+            if (phaseDays === 0) {
+                phase = 'Luna Nueva';
+                imagePath = '../images/luna-nueva.png';
+            } else if (phaseDays <= 7) {
+                phase = 'Cuarto Creciente';
+                imagePath = '../images/cuarto-creciente.png';
+            } else if (phaseDays <= 14) {
+                phase = 'Luna Llena';
+                imagePath = '../images/luna-llena.png';
+            } else if (phaseDays <= 21) {
+                phase = 'Cuarto Menguante';
+                imagePath = '../images/cuarto-menguante.png';
+            } else {
+                phase = 'Luna Nueva Aproximándose';
+                imagePath = '../images/luna-nueva-aproximandose.png';
+            }
+
+            lunarPhaseElement.textContent = `Fase lunar actual: ${phase}`;
+            lunarImageElement.src = imagePath;
+        }
+
+        document.addEventListener('DOMContentLoaded', showLunarPhase);
+    </script>
+</body>
+</html>

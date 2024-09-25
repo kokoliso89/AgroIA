@@ -1,0 +1,132 @@
+
+        @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Now&display=swap');
+        
+        body {
+            font-family: 'Now', sans-serif;
+            background-color: #FFFFFF;
+        }
+        
+        .navbar-brand {
+            font-family: 'DM Serif Display', serif;
+            font-weight: bold;
+        }
+        
+        h1 {
+            color: #006769;
+            font-family: 'DM Serif Display', serif;
+            text-align: center;
+            margin-top: 20px;
+            font-size: 3rem;
+        }
+        
+        .card {
+            margin: 20px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+       footer {
+            background-color: #f8f9fa;
+            padding: 20px 0;
+            text-align: center;
+            margin-top: 50px;
+            border-top: 1px solid #e7e7e7;
+        }
+        
+        .footer-links a {
+            margin: 0 10px;
+            color: #006769;
+            text-decoration: none;
+        }
+        
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+        
+        .btn-primary {
+            background-color: #40a577;
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background-color: #006769;
+        }
+        .login-options {
+            text-align: center;
+        }
+        .login-btn {
+            width: 100%;
+            margin: 10px 0;
+        }
+        .login-icon {
+            margin-right: 10px;
+        }
+        .or-divider {
+            text-align: center;
+            margin: 20px 0;
+            position: relative;
+        }
+        .or-divider hr {
+            border-top: 1px solid #bbb;
+            margin: 0;
+        }
+        .or-divider span {
+            position: absolute;
+            top: -13px;
+            background-color: #fff;
+            padding: 0 10px;
+            color: #666;
+        }
+        .register-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+       
+        .course-section {
+            padding: 20px;
+        }
+        .course-card {
+            margin-bottom: 20px;
+        }
+        .documentation-section {
+            padding: 20px;
+        }
+        .document-card {
+            margin-bottom: 20px;
+        }
+        .detector-box {
+            height: 500px;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .image-upload {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            background-color: #f9f9f9;
+        }
+        .image-preview {
+            max-width: 100%;
+            max-height: 400px;
+            object-fit: contain;
+        }
+        .input-group {
+            border-top: 1px solid #ddd;
+            background-color: #fff;
+        }
+        .input-group input {
+            border: none;
+            border-radius: 0;
+        }
+        .input-group button {
+            border-radius: 0;
+        }
+        .result-box {
+            padding: 20px;
+            text-align: center;
+        }
+ 

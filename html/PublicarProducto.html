@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publicar Producto - AgroIA</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/estilo.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">AgroIA</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="Inicio.html"><i class="fas fa-home"></i> Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="pago.html"><i class="fas fa-robot"></i> ChatbotIA</a></li>
+                    <li class="nav-item"><a class="nav-link" href="pago.html"><i class="fas fa-bug"></i> Detector de Plagas</a></li>
+                    <li class="nav-item"><a class="nav-link" href="documentacion.html"><i class="fas fa-book"></i> Documentación</a></li>
+                    <li class="nav-item"><a class="nav-link" href="zona-social.html"><i class="fas fa-users"></i> Zona Social</a></li>
+                    <li class="nav-item"><a class="nav-link" href="zona-mercado.html"><i class="fas fa-store"></i> Zona de Mercado</a></li>
+                    <li class="nav-item"><a class="nav-link" href="cursos.html"><i class="fas fa-chalkboard-teacher"></i> Cursos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="precios.html"><i class="fas fa-tags"></i> Precios o Paquetes</a></li>
+                    <li class="nav-item"><a class="nav-link" href="login.html"><i class="fas fa-sign-in-alt"></i> Iniciar Sesión</a></li>
+                    <li class="nav-item"><a class="nav-link" href="registro.html"><i class="fas fa-user-plus"></i> Regístrate</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <h1 class="text-center">Publicar Producto</h1>
+        <p class="text-center">Completa el formulario a continuación para publicar tu producto agrícola.</p>
+
+        <!-- Formulario para Publicar Producto -->
+        <form>
+            <div class="mb-3">
+                <label for="nombreProducto" class="form-label">Nombre del Producto</label>
+                <input type="text" class="form-control" id="nombreProducto" placeholder="Ejemplo: Tomates Frescos" required>
+            </div>
+            <div class="mb-3">
+                <label for="descripcion" class="form-label">Descripción</label>
+                <textarea class="form-control" id="descripcion" rows="3" placeholder="Descripción del producto" required></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="precio" class="form-label">Precio (por kg o unidad)</label>
+                <input type="number" class="form-control" id="precio" placeholder="Ejemplo: 2.50" step="0.01" required>
+            </div>
+            <div class="mb-3">
+                <label for="categoria" class="form-label">Categoría</label>
+                <select class="form-select" id="categoria" required>
+                    <option value="" disabled selected>Selecciona una categoría</option>
+                    <option value="vegetales">Vegetales</option>
+                    <option value="frutas">Frutas</option>
+                    <option value="hierbas">Hierbas</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="imagen" class="form-label">Imagen del Producto</label>
+                <input type="file" class="form-control" id="imagen" accept="image/*" required>
+            </div>
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary">Publicar Producto</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Footer -->
+    <footer class="mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <p>&copy; 2024 AgroIA. Todos los derechos reservados.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <div class="footer-links">
+                        <a href="#">Política de Privacidad</a>
+                        <a href="#">Términos y Condiciones</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
